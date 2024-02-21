@@ -1,8 +1,14 @@
 <html>
 	<head>
-		<title> My first HTML Page - JSP</title>
+		<title>Login Page - JSP</title>
 	</head>
 	<body>
-		My first html page with body - JSP
+		Welcome to the login page!
+		<form method="post">
+			Name: <input type="text" name="name">
+			Password: <input type="password" name="password">
+			<input type="submit">
+		</form>
+		 
 	</body>
 </html>
