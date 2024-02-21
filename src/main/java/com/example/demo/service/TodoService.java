@@ -12,19 +12,18 @@ import com.example.demo.model.Todo;
 public class TodoService {
 
 	private static List<Todo> todos = new ArrayList<>();
-	
-		static {
-			todos.add(new Todo(1, "in28minutes","Learn AWS", 
-								LocalDate.now().plusYears(1), false ));
-			todos.add(new Todo(2, "in28minutes","Learn DevOps", 
-					LocalDate.now().plusYears(2), false ));
-			todos.add(new Todo(3, "in28minutes","Learn Full Stack Development", 
-					LocalDate.now().plusYears(3), false ));
-		}
 
-		public List<Todo> findByUsername(String string) {
-			// TODO Auto-generated method stub
-			return todos;
-		}
+	private static int todocount = 0;
+
+	public List<Todo> findByUsername(String string) {
+		// TODO Auto-generated method stub
+		return todos;
+	}
+
+	public void addTodo(String name, String description, LocalDate date, boolean done) {
+
+		Todo todo = new Todo(++todocount, name, description, date, done);
+		todos.add(todo);
+	}
 
 }
