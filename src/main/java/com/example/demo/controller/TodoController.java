@@ -52,8 +52,8 @@ public class TodoController {
 		return "redirect:list-todos";
 	}
 	
-	@RequestMapping(value="delete-todo",method=RequestMethod.DELETE)
-	public String deleteTodo(@RequestParam int id,ModelMap model) {
+	@RequestMapping("delete-todo")
+	public String deleteTodo(@RequestParam int id) {
 		todoService.deleteTodo(id);
 		return "redirect:list-todos";
 	}

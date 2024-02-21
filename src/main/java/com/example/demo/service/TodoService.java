@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
@@ -28,11 +29,8 @@ public class TodoService {
 	
 	public void deleteTodo(int id) {
 		
-		for(Todo todo:todos) {
-			if(todo.getId()==id) {
-				todos.remove(todo);
-			}
-		}
+		Predicate<? super Todo> predicate = todo-> todo.getId()==id;
+		todos.removeIf(predicate );
 
 	}
 
