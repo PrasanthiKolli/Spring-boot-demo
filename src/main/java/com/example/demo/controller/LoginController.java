@@ -1,3 +1,5 @@
+//this class is overwritten by welcome controller just for reference
+
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +19,12 @@ public class LoginController {
 	@Autowired
 	private AuthenticationService authenticationService;
 	
-	@RequestMapping(value="login",method = RequestMethod.GET)
+	//@RequestMapping(value="login",method = RequestMethod.GET)
 	public String gotoLoginPage() {
 		return "login";
 	}
 	
-	@RequestMapping(value="login",method = RequestMethod.POST)
+	//@RequestMapping(value="login",method = RequestMethod.POST)
 	public String gotoWelcomePage(@RequestParam String name, 
 			@RequestParam String password, ModelMap model) {
 		
