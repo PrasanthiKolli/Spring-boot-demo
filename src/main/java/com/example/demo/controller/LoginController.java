@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.demo.service.AuthenticationService;
 
-@Controller
+//@Controller
 @SessionAttributes("name")
 public class LoginController {
 	
 	@Autowired
 	private AuthenticationService authenticationService;
 	
-	//@RequestMapping(value="login",method = RequestMethod.GET)
+	@RequestMapping(value="login",method = RequestMethod.GET)
 	public String gotoLoginPage() {
 		return "login";
 	}
 	
-	//@RequestMapping(value="login",method = RequestMethod.POST)
+	@RequestMapping(value="login",method = RequestMethod.POST)
 	public String gotoWelcomePage(@RequestParam String name, 
 			@RequestParam String password, ModelMap model) {
 		
